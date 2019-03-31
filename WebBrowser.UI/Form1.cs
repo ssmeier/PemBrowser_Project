@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WebBrowser.UI
 {
-    public partial class Form1 : Form
+    public partial class ViewWindow : Form
     {
-        public Form1()
+        public ViewWindow()
         {
             InitializeComponent();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
