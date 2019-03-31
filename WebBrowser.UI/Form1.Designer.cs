@@ -149,6 +149,7 @@
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStrip1
             // 
@@ -164,6 +165,7 @@
             this.toolStrip1.Location = new System.Drawing.Point(0, 33);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1080, 31);
+            this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -205,8 +207,9 @@
             // 
             // urlBox
             // 
+            this.urlBox.AutoSize = false;
             this.urlBox.Name = "urlBox";
-            this.urlBox.Size = new System.Drawing.Size(400, 31);
+            this.urlBox.Size = new System.Drawing.Size(500, 31);
             // 
             // goButton
             // 
@@ -232,7 +235,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1060, 529);
+            this.tabPage2.Size = new System.Drawing.Size(1072, 544);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -240,10 +243,11 @@
             // tabField
             // 
             this.tabField.Controls.Add(this.tabPage2);
-            this.tabField.Location = new System.Drawing.Point(0, 67);
+            this.tabField.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabField.Location = new System.Drawing.Point(0, 64);
             this.tabField.Name = "tabField";
             this.tabField.SelectedIndex = 0;
-            this.tabField.Size = new System.Drawing.Size(1068, 562);
+            this.tabField.Size = new System.Drawing.Size(1080, 577);
             this.tabField.TabIndex = 3;
             // 
             // viewerScreen
@@ -252,8 +256,10 @@
             this.viewerScreen.Location = new System.Drawing.Point(3, 3);
             this.viewerScreen.MinimumSize = new System.Drawing.Size(20, 20);
             this.viewerScreen.Name = "viewerScreen";
-            this.viewerScreen.Size = new System.Drawing.Size(1054, 523);
+            this.viewerScreen.Size = new System.Drawing.Size(1066, 538);
             this.viewerScreen.TabIndex = 0;
+            this.viewerScreen.Url = new System.Uri("http://www.google.com", System.UriKind.Absolute);
+            this.viewerScreen.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.viewerScreen_DocumentCompleted);
             // 
             // ViewWindow
             // 
