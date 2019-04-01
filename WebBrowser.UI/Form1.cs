@@ -37,10 +37,31 @@ namespace WebBrowser.UI
          
             String about = "Minibrowser is a lightweight browser " +
                 "created as an exercise in the design and development of software." +
-                "\n\n" +"created by Sam Meier at Auburn sm0043";
+                "\n\n" +"created by Sam Meier for Auburn University @sm0043";
             MessageBox.Show(about);
- 
        
+        }
+          
+        
+        
+        private void goButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Uri targetUrl = new Uri(urlBox.Text);
+                viewerScreen.Url = targetUrl;
+            }
+            catch { }
+        }
+
+        private void urlBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Return)
+            {
+                goButton_Click(new object(), new EventArgs());
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }
