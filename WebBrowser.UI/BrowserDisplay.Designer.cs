@@ -51,7 +51,7 @@
             this.bookmarkButton = new System.Windows.Forms.ToolStripButton();
             this.tabField = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.viewerScreen = new System.Windows.Forms.WebBrowser();
+            this.toolBrowserControl1 = new WebBrowser.UI.ToolBrowserControl();
             backButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -244,7 +244,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.viewerScreen);
+            this.tabPage1.Controls.Add(this.toolBrowserControl1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -253,14 +253,12 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // viewerScreen
+            // toolBrowserControl1
             // 
-            this.viewerScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.viewerScreen.Location = new System.Drawing.Point(3, 3);
-            this.viewerScreen.MinimumSize = new System.Drawing.Size(20, 20);
-            this.viewerScreen.Name = "viewerScreen";
-            this.viewerScreen.Size = new System.Drawing.Size(1066, 538);
-            this.viewerScreen.TabIndex = 0;
+            this.toolBrowserControl1.Location = new System.Drawing.Point(3, 6);
+            this.toolBrowserControl1.Name = "toolBrowserControl1";
+            this.toolBrowserControl1.Size = new System.Drawing.Size(1072, 538);
+            this.toolBrowserControl1.TabIndex = 0;
             // 
             // ViewWindow
             // 
@@ -307,7 +305,7 @@
         private System.Windows.Forms.ToolStripButton bookmarkButton;
         private System.Windows.Forms.TabControl tabField;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.WebBrowser viewerScreen;
+        private ToolBrowserControl toolBrowserControl1;
     }
 }
 

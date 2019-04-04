@@ -49,7 +49,6 @@ namespace WebBrowser.UI
             try
             {
                 Uri targetUrl = new Uri(urlBox.Text);
-                viewerScreen.Url = targetUrl;
             }
             catch { }
         }
