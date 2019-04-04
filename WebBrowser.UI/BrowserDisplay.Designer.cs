@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ToolStripButton backButton;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.filesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTabToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,31 +40,13 @@
             this.bookmarksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.forwardButton = new System.Windows.Forms.ToolStripButton();
-            this.refreshButton = new System.Windows.Forms.ToolStripButton();
-            this.homeButton = new System.Windows.Forms.ToolStripButton();
-            this.urlBox = new System.Windows.Forms.ToolStripTextBox();
-            this.goButton = new System.Windows.Forms.ToolStripButton();
-            this.bookmarkButton = new System.Windows.Forms.ToolStripButton();
             this.tabField = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tab1 = new System.Windows.Forms.TabPage();
             this.toolBrowserControl1 = new WebBrowser.UI.ToolBrowserControl();
-            backButton = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
-            this.toolStrip1.SuspendLayout();
             this.tabField.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tab1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // backButton
-            // 
-            backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            backButton.Image = ((System.Drawing.Image)(resources.GetObject("backButton.Image")));
-            backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            backButton.Name = "backButton";
-            backButton.Size = new System.Drawing.Size(28, 28);
-            backButton.Text = "backButton";
             // 
             // menuStrip1
             // 
@@ -96,31 +76,35 @@
             // newTabToolStripMenuItem
             // 
             this.newTabToolStripMenuItem.Name = "newTabToolStripMenuItem";
-            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
+            this.newTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.newTabToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
             this.newTabToolStripMenuItem.Text = "New Tab";
+            this.newTabToolStripMenuItem.Click += new System.EventHandler(this.newTabToolStripMenuItem_Click);
             // 
             // closeCurrentTabToolStripMenuItem
             // 
             this.closeCurrentTabToolStripMenuItem.Name = "closeCurrentTabToolStripMenuItem";
-            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
+            this.closeCurrentTabToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.W)));
+            this.closeCurrentTabToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
             this.closeCurrentTabToolStripMenuItem.Text = "Close Current Tab";
+            this.closeCurrentTabToolStripMenuItem.Click += new System.EventHandler(this.closeCurrentTabToolStripMenuItem_Click);
             // 
             // savePageHTMLToolStripMenuItem
             // 
             this.savePageHTMLToolStripMenuItem.Name = "savePageHTMLToolStripMenuItem";
-            this.savePageHTMLToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
+            this.savePageHTMLToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.savePageHTMLToolStripMenuItem.Text = "Save Page (HTML)";
             // 
             // printPageToolStripMenuItem
             // 
             this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
-            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
+            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.printPageToolStripMenuItem.Text = "Print Page";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(237, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.exitToolStripMenuItem.Text = "Close Browser";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -160,104 +144,33 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            backButton,
-            this.forwardButton,
-            this.refreshButton,
-            this.homeButton,
-            this.urlBox,
-            this.goButton,
-            this.bookmarkButton});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 33);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1080, 31);
-            this.toolStrip1.Stretch = true;
-            this.toolStrip1.TabIndex = 2;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // forwardButton
-            // 
-            this.forwardButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.forwardButton.Image = ((System.Drawing.Image)(resources.GetObject("forwardButton.Image")));
-            this.forwardButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.forwardButton.Name = "forwardButton";
-            this.forwardButton.Size = new System.Drawing.Size(28, 28);
-            this.forwardButton.Text = "forwardButton";
-            // 
-            // refreshButton
-            // 
-            this.refreshButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.refreshButton.Image = ((System.Drawing.Image)(resources.GetObject("refreshButton.Image")));
-            this.refreshButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(28, 28);
-            this.refreshButton.Text = "refreshButton";
-            // 
-            // homeButton
-            // 
-            this.homeButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
-            this.homeButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.homeButton.Name = "homeButton";
-            this.homeButton.Size = new System.Drawing.Size(28, 28);
-            this.homeButton.Text = "homeButton";
-            // 
-            // urlBox
-            // 
-            this.urlBox.AcceptsReturn = true;
-            this.urlBox.Name = "urlBox";
-            this.urlBox.Size = new System.Drawing.Size(500, 31);
-            this.urlBox.Text = "http://";
-            this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
-            // 
-            // goButton
-            // 
-            this.goButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.goButton.Image = ((System.Drawing.Image)(resources.GetObject("goButton.Image")));
-            this.goButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.goButton.Name = "goButton";
-            this.goButton.Size = new System.Drawing.Size(28, 28);
-            this.goButton.Text = "goButton";
-            this.goButton.Click += new System.EventHandler(this.goButton_Click);
-            // 
-            // bookmarkButton
-            // 
-            this.bookmarkButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bookmarkButton.Image = ((System.Drawing.Image)(resources.GetObject("bookmarkButton.Image")));
-            this.bookmarkButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bookmarkButton.Name = "bookmarkButton";
-            this.bookmarkButton.Size = new System.Drawing.Size(28, 28);
-            this.bookmarkButton.Text = "bookmarkButton";
-            // 
             // tabField
             // 
-            this.tabField.Controls.Add(this.tabPage1);
+            this.tabField.Controls.Add(this.tab1);
             this.tabField.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabField.Location = new System.Drawing.Point(0, 64);
+            this.tabField.Location = new System.Drawing.Point(0, 33);
             this.tabField.Name = "tabField";
             this.tabField.SelectedIndex = 0;
-            this.tabField.Size = new System.Drawing.Size(1080, 577);
+            this.tabField.Size = new System.Drawing.Size(1080, 608);
             this.tabField.TabIndex = 3;
             // 
-            // tabPage1
+            // tab1
             // 
-            this.tabPage1.Controls.Add(this.toolBrowserControl1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1072, 544);
-            this.tabPage1.TabIndex = 2;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tab1.BackColor = System.Drawing.Color.Transparent;
+            this.tab1.Controls.Add(this.toolBrowserControl1);
+            this.tab1.Location = new System.Drawing.Point(4, 29);
+            this.tab1.Name = "tab1";
+            this.tab1.Padding = new System.Windows.Forms.Padding(3);
+            this.tab1.Size = new System.Drawing.Size(1072, 575);
+            this.tab1.TabIndex = 2;
+            this.tab1.Text = "tab1";
             // 
             // toolBrowserControl1
             // 
-            this.toolBrowserControl1.Location = new System.Drawing.Point(3, 6);
+            this.toolBrowserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.toolBrowserControl1.Location = new System.Drawing.Point(3, 3);
             this.toolBrowserControl1.Name = "toolBrowserControl1";
-            this.toolBrowserControl1.Size = new System.Drawing.Size(1072, 538);
+            this.toolBrowserControl1.Size = new System.Drawing.Size(1066, 569);
             this.toolBrowserControl1.TabIndex = 0;
             // 
             // ViewWindow
@@ -266,17 +179,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1080, 641);
             this.Controls.Add(this.tabField);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "ViewWindow";
             this.Text = "View";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             this.tabField.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tab1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,15 +206,8 @@
         private System.Windows.Forms.ToolStripMenuItem historyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bookmarksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton forwardButton;
-        private System.Windows.Forms.ToolStripButton refreshButton;
-        private System.Windows.Forms.ToolStripButton homeButton;
-        private System.Windows.Forms.ToolStripTextBox urlBox;
-        private System.Windows.Forms.ToolStripButton goButton;
-        private System.Windows.Forms.ToolStripButton bookmarkButton;
         private System.Windows.Forms.TabControl tabField;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tab1;
         private ToolBrowserControl toolBrowserControl1;
     }
 }

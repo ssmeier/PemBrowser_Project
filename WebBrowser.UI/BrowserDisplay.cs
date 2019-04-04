@@ -41,26 +41,37 @@ namespace WebBrowser.UI
             MessageBox.Show(about);
        
         }
-          
-        
-        
-        private void goButton_Click(object sender, EventArgs e)
+    
+        private void toolBrowserControl1_Load(object sender, EventArgs e)
         {
-            try
-            {
-                Uri targetUrl = new Uri(urlBox.Text);
-            }
-            catch { }
+
         }
 
-        private void urlBox_KeyDown(object sender, KeyEventArgs e)
+        private void urlBox_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Return)
+
+        }
+
+        private void newTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var x = new TabPage();
+            x.Text = "New Tab";
+            var y = new ToolBrowserControl();
+            y.Dock = DockStyle.Fill;
+            
+            tabField.TabPages.Add(x);
+            x.Controls.Add(y);
+            
+
+        }
+
+        private void closeCurrentTabToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tabField.TabPages.Count > 1)
             {
-                goButton_Click(new object(), new EventArgs());
-                e.Handled = true;
-                e.SuppressKeyPress = true;
+                tabField.TabPages.Remove(tabField.SelectedTab);
             }
+            else { };
         }
     }
 }
