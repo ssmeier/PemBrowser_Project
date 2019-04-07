@@ -68,6 +68,7 @@
             this.backButton.Size = new System.Drawing.Size(28, 28);
             this.backButton.Text = "Back";
             this.backButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // forwardButton
             // 
@@ -77,6 +78,7 @@
             this.forwardButton.Name = "forwardButton";
             this.forwardButton.Size = new System.Drawing.Size(28, 28);
             this.forwardButton.Text = "Forward";
+            this.forwardButton.Click += new System.EventHandler(this.forwardButton_Click);
             // 
             // refreshButton
             // 
@@ -86,6 +88,7 @@
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(28, 28);
             this.refreshButton.Text = "Refresh";
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // homeButton
             // 
@@ -102,7 +105,7 @@
             this.urlBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.urlBox.Name = "urlBox";
             this.urlBox.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.urlBox.Size = new System.Drawing.Size(500, 31);
+            this.urlBox.Size = new System.Drawing.Size(496, 31);
             this.urlBox.Text = "http://";
             this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
             // 
@@ -133,6 +136,7 @@
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(794, 418);
             this.webBrowser1.TabIndex = 1;
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
             // 
             // ToolBrowserControl
             // 
