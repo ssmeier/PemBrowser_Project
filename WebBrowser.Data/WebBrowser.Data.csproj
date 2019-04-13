@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68A4A08A-0FEF-450A-AF9B-4DE59C06017A}</ProjectGuid>
+    <ProjectGuid>{9B8D31EE-D65B-4EE7-84A5-01824DA6AF74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebBrowser.Data</RootNamespace>
@@ -56,16 +56,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database1.mdf">
+    <Content Include="WebBrowserDatabase.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Database1_log.ldf">
+    <Content Include="WebBrowserDatabase_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Database1.mdf</DependentUpon>
+      <DependentUpon>WebBrowserDatabase.mdf</DependentUpon>
     </Content>
   </ItemGroup>
   <ItemGroup>
