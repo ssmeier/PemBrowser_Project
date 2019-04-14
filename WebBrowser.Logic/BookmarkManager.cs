@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WebBrowser.Data.Database1DataSetTableAdapters;
+using WebBrowser.Data.DataSet1TableAdapters;
 
 namespace WebBrowser.Logic
 {
@@ -10,7 +10,6 @@ namespace WebBrowser.Logic
         public static void addBookmark(BookmarkItem item)
         {
             var adapter = new BookmarksTableAdapter();
-            adapter.Insert(item.URL, item.Name);
 
 
         }

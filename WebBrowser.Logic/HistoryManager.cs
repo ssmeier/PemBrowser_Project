@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using WebBrowser.Data.DataSet2TableAdapters;
 
 namespace WebBrowser.Logic
 {
@@ -8,7 +9,7 @@ namespace WebBrowser.Logic
     {
         public static void addHistoryItem(HistoryItem item)
         {
-            var adapter = new
+            var adapter = new HistoryTableAdapter();
         }
     }
 }
