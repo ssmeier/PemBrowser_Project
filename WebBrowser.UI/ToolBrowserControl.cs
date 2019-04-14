@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WebBrowser.Logic;
+using WebBrowser.Logic.New;
 
 namespace WebBrowser.UI
 {
