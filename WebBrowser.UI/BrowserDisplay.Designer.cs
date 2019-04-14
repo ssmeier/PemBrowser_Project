@@ -92,19 +92,19 @@
             // savePageHTMLToolStripMenuItem
             // 
             this.savePageHTMLToolStripMenuItem.Name = "savePageHTMLToolStripMenuItem";
-            this.savePageHTMLToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
+            this.savePageHTMLToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.savePageHTMLToolStripMenuItem.Text = "Save Page (HTML)";
             // 
             // printPageToolStripMenuItem
             // 
             this.printPageToolStripMenuItem.Name = "printPageToolStripMenuItem";
-            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
+            this.printPageToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.printPageToolStripMenuItem.Text = "Print Page";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(302, 30);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.exitToolStripMenuItem.Text = "Close Browser";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -163,7 +163,7 @@
             this.tab1.Padding = new System.Windows.Forms.Padding(3);
             this.tab1.Size = new System.Drawing.Size(1072, 575);
             this.tab1.TabIndex = 2;
-            this.tab1.Text = "Home";
+            this.tab1.Text = "tab1";
             // 
             // toolBrowserControl1
             // 
