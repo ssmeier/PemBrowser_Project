@@ -73,5 +73,19 @@ namespace WebBrowser.UI
             }
             else { };
         }
+
+        private void historyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var history = new HistoryManagerUI();
+            history.ShowDialog();
+        }
+
+        private void bookmarksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            {
+                var bookmarks = new BookmarkManagerUI();
+                bookmarks.ShowDialog();
+            }
+        }
     }
 }

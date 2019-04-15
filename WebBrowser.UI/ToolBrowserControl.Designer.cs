@@ -105,7 +105,7 @@
             this.urlBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.urlBox.Name = "urlBox";
             this.urlBox.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.urlBox.Size = new System.Drawing.Size(496, 31);
+            this.urlBox.Size = new System.Drawing.Size(494, 31);
             this.urlBox.Text = "http://";
             this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
             // 
@@ -127,6 +127,7 @@
             this.addBookmark.Name = "addBookmark";
             this.addBookmark.Size = new System.Drawing.Size(28, 28);
             this.addBookmark.Text = "toolStripButton6";
+            this.addBookmark.Click += new System.EventHandler(this.addBookmark_Click);
             // 
             // webBrowser1
             // 

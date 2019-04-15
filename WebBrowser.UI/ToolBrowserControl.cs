@@ -66,6 +66,20 @@ namespace WebBrowser.UI
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
             session.addBackStack(webBrowser1.Url);
+
+            var page = new HistoryItem();
+            page.URL = webBrowser1.Url.ToString();
+            page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
+            page.Date = DateTime.Now;
+            HistoryManager.AddHistory(page);
+        }
+
+        private void addBookmark_Click(object sender, EventArgs e)
+        {
+            var page = new BookmarkItem();
+            page.URL = webBrowser1.Url.ToString();
+            page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
+            BookmarkManager.AddBookmark(page);
         }
     }
 }

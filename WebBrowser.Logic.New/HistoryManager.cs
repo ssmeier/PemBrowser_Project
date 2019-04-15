@@ -33,5 +33,10 @@ namespace WebBrowser.Logic.New
             return result;
 
         }
+        public static string UrlToName(string URL)
+        {
+            string [] name = URL.Split('.');
+            return name[1];
+        }
     }
 }
