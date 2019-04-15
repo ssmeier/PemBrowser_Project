@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BookmarkManagerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookmarkManagerUI.Designer.cs">
+      <DependentUpon>BookmarkManagerUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="BrowserDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BrowserDisplay.Designer.cs">
       <DependentUpon>BrowserDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryManagerUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistoryManagerUI.Designer.cs">
+      <DependentUpon>HistoryManagerUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,8 +72,14 @@
     <Compile Include="ToolBrowserControl.Designer.cs">
       <DependentUpon>ToolBrowserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BookmarkManagerUI.resx">
+      <DependentUpon>BookmarkManagerUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BrowserDisplay.resx">
       <DependentUpon>BrowserDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistoryManagerUI.resx">
+      <DependentUpon>HistoryManagerUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
