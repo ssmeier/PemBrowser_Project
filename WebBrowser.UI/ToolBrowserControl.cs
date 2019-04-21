@@ -65,13 +65,20 @@ namespace WebBrowser.UI
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
+            loadingBar.Value = 100;
+            progressLabel.Text = "DONE!";
+            System.Threading.Thread.Sleep(1000);
+            progressLabel.Visible = false;
+            loadingBar.Visible = false;
+            loadingBar.Value = 0;
             session.addBackStack(webBrowser1.Url);
 
-            var page = new HistoryItem();
+            /* var page = new HistoryItem();
             page.URL = webBrowser1.Url.ToString();
             page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
             page.Date = DateTime.Now;
             HistoryManager.AddHistory(page);
+            */
         }
 
         private void addBookmark_Click(object sender, EventArgs e)
@@ -84,18 +91,23 @@ namespace WebBrowser.UI
 
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
-            loadingBar.PerformStep();
+            
+            
+        }
+
+        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        {
+            
+        }
+
+        private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
+        {
             while (loadingBar.Value < 100)
             {
                 loadingBar.Visible = true; progressLabel.Visible = true;
+                loadingBar.PerformStep();
             }
-            if (loadingBar.Value == 100)
-            {
-                progressLabel.Text = "DONE!";
-                System.Threading.Thread.Sleep(1000);
-                progressLabel.Visible = false;
-                loadingBar.Visible = false;
-            }
+            
         }
     }
 }

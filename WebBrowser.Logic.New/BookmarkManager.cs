@@ -10,13 +10,13 @@ namespace WebBrowser.Logic.New
     public class BookmarkManager
     {
         public static void AddBookmark(BookmarkItem item) {
-            var adapter = new BookmarksTableAdapter();
+            var adapter = new TableTableAdapter();
             adapter.Insert(item.URL, item.Name);
         }
 
         public static List<BookmarkItem> GetBookmarks()
         {
-            var adapter = new BookmarksTableAdapter();
+            var adapter = new TableTableAdapter();
             var result = new List<BookmarkItem>();
             var rows = adapter.GetData();
 

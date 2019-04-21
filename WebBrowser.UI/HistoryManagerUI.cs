@@ -27,5 +27,17 @@ namespace WebBrowser.UI
                 listBox1.Items.Add(logItem);
             }
          }
+
+        // Search Button
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            HistoryItem selectedItem = (HistoryItem) listBox1.SelectedItem;
+            historyItem.Text = selectedItem.Name;
+        }
     }
 }
