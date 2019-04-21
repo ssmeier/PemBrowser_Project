@@ -81,5 +81,21 @@ namespace WebBrowser.UI
             page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
             BookmarkManager.AddBookmark(page);
         }
+
+        private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
+        {
+            loadingBar.PerformStep();
+            while (loadingBar.Value < 100)
+            {
+                loadingBar.Visible = true; progressLabel.Visible = true;
+            }
+            if (loadingBar.Value == 100)
+            {
+                progressLabel.Text = "DONE!";
+                System.Threading.Thread.Sleep(1000);
+                progressLabel.Visible = false;
+                loadingBar.Visible = false;
+            }
+        }
     }
 }

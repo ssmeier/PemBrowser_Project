@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBrowserControl));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
@@ -38,7 +39,11 @@
             this.goButton = new System.Windows.Forms.ToolStripButton();
             this.addBookmark = new System.Windows.Forms.ToolStripButton();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.loadingBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.progressLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -51,11 +56,13 @@
             this.homeButton,
             this.urlBox,
             this.goButton,
-            this.addBookmark});
+            this.addBookmark,
+            this.loadingBar,
+            this.progressLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(5);
-            this.toolStrip1.Size = new System.Drawing.Size(794, 41);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 20);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 56);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -105,7 +112,7 @@
             this.urlBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.urlBox.Name = "urlBox";
             this.urlBox.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.urlBox.Size = new System.Drawing.Size(494, 31);
+            this.urlBox.Size = new System.Drawing.Size(492, 31);
             this.urlBox.Text = "http://";
             this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
             // 
@@ -132,12 +139,30 @@
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 41);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 56);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(794, 418);
+            this.webBrowser1.Size = new System.Drawing.Size(794, 403);
             this.webBrowser1.TabIndex = 1;
             this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // loadingBar
+            // 
+            this.loadingBar.Name = "loadingBar";
+            this.loadingBar.Size = new System.Drawing.Size(100, 15);
+            this.loadingBar.Visible = false;
+            // 
+            // progressLabel
+            // 
+            this.progressLabel.Name = "progressLabel";
+            this.progressLabel.Size = new System.Drawing.Size(100, 25);
+            this.progressLabel.Text = "LOADING...";
+            this.progressLabel.Visible = false;
             // 
             // ToolBrowserControl
             // 
@@ -149,6 +174,7 @@
             this.Size = new System.Drawing.Size(794, 459);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +191,8 @@
         private System.Windows.Forms.ToolStripButton goButton;
         private System.Windows.Forms.ToolStripButton addBookmark;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolStripProgressBar loadingBar;
+        private System.Windows.Forms.ToolStripLabel progressLabel;
     }
 }
