@@ -15,17 +15,19 @@ namespace WebBrowser.UI
     {
         public FilteredHistory()
         {
-
+            InitializeComponent();
         }
 
         public string term;
-             
+        
+
         private void FilteredHistoryBox_Load(object sender, EventArgs e)
         {
-          var list = HistoryManager.filterHistory(term);
-          foreach(var item in list)
+            termLabel.Text = String.Format("Results for {0}", term);
+            var list = HistoryManager.filterHistory(term);
+            foreach (var item in list)
             {
-                searchResults.Items.Add(term);
+                searchResults.Items.Add(item);
             }
         }
 
@@ -33,5 +35,11 @@ namespace WebBrowser.UI
         {
             DialogResult = DialogResult.OK;
         }
+
+        private void termLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+    
     }
 }

@@ -91,7 +91,7 @@ namespace WebBrowser.UI
 
         private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var history = HistoryManager.GetHistory();
+            var history = HistoryManager.GetHistoryList();
             foreach (var item in history)
             {
                 HistoryManager.DeleteHistoryItem(item);

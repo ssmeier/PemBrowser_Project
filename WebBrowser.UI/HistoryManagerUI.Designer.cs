@@ -103,7 +103,7 @@
             this.historyItem.Name = "historyItem";
             this.historyItem.Size = new System.Drawing.Size(87, 20);
             this.historyItem.TabIndex = 0;
-            this.historyItem.Text = "histroyItem";
+            this.historyItem.Text = "historyItem";
             // 
             // clearHistoryButton
             // 

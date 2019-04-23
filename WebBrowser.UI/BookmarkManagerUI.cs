@@ -21,7 +21,7 @@ namespace WebBrowser.UI
 
         private void BookmarkManagerUI_Load(object sender, EventArgs e)
         {
-            var bookmarks = BookmarkManager.GetBookmarks();
+            var bookmarks = BookmarkManager.GetBookmarkData();
             foreach (var item in bookmarks)
             {
                 string BookmarkItem = String.Format("{0} ({1}) ", item.Name, item.URL);
@@ -33,10 +33,17 @@ namespace WebBrowser.UI
         {
             var adapter = new TableTableAdapter();
             var BookmarkList = adapter.GetData();
-            foreach(var item in listBox1.SelectedItems)
-            {
+            var bookmarkItem = listBox1.SelectedItem.ToString();
+            foreach (var bookmark in BookmarkList)
+                {
+                    if (bookmarkItem.Contains(bookmark.Name))
+                    {
+                        BookmarkManager.DeleteBookmarkRow(bookmark);
                         
-            }
+                    }
+                }
+            listBox1.Refresh();
+
         }
     }
 }

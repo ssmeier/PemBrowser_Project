@@ -22,7 +22,7 @@ namespace WebBrowser.UI
 
         private void HistoryManagerUI_Load(object sender, EventArgs e)
         {
-            var history = HistoryManager.GetHistory();
+            var history = HistoryManager.GetHistoryData();
             foreach(var log in history)
             {
                 string logItem = String.Format("[{0}] | {1} | ({2}) ", log.Date, log.Name, log.URL);
@@ -37,6 +37,7 @@ namespace WebBrowser.UI
             {
                 var term = textBox1.Text;
                 var searchResult = new FilteredHistory();
+                var filterlist = HistoryManager.filterHistory(term);
                 searchResult.term = term;
                 searchResult.ShowDialog();
             }
@@ -46,8 +47,15 @@ namespace WebBrowser.UI
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+            try
+            {
+                var item = listBox1.SelectedItem.ToString();
+                var newString = item.Split();
+                historyItem.Text = newString[1];
+            }
+            catch{ }
         }
+
 
         private void clearHistoryButton_Click(object sender, EventArgs e)
         {

@@ -60,6 +60,7 @@
             this.termLabel.Size = new System.Drawing.Size(130, 20);
             this.termLabel.TabIndex = 2;
             this.termLabel.Text = "Results for: Term";
+            this.termLabel.Click += new System.EventHandler(this.termLabel_Click);
             // 
             // FilteredHistory
             // 
