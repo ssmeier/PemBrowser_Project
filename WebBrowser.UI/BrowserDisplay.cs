@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Logic.New;
 
 namespace WebBrowser.UI
 {
@@ -85,6 +86,15 @@ namespace WebBrowser.UI
             {
                 var bookmarks = new BookmarkManagerUI();
                 bookmarks.ShowDialog();
+            }
+        }
+
+        private void clearHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var history = HistoryManager.GetHistory();
+            foreach (var item in history)
+            {
+                HistoryManager.DeleteHistoryItem(item);
             }
         }
     }

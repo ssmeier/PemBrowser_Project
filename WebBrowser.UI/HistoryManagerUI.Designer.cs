@@ -32,10 +32,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.historyItemBox = new System.Windows.Forms.GroupBox();
-            this.historyItem = new System.Windows.Forms.Label();
-            this.deleteHistoryItem = new System.Windows.Forms.Button();
-            this.clearHistoryButton = new System.Windows.Forms.Button();
             this.navigateButton = new System.Windows.Forms.Button();
+            this.deleteHistoryItem = new System.Windows.Forms.Button();
+            this.historyItem = new System.Windows.Forms.Label();
+            this.clearHistoryButton = new System.Windows.Forms.Button();
             this.historyItemBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -78,14 +78,14 @@
             this.historyItemBox.TabStop = false;
             this.historyItemBox.Text = "Selection";
             // 
-            // historyItem
+            // navigateButton
             // 
-            this.historyItem.AutoSize = true;
-            this.historyItem.Location = new System.Drawing.Point(83, 53);
-            this.historyItem.Name = "historyItem";
-            this.historyItem.Size = new System.Drawing.Size(87, 20);
-            this.historyItem.TabIndex = 0;
-            this.historyItem.Text = "histroyItem";
+            this.navigateButton.Location = new System.Drawing.Point(6, 136);
+            this.navigateButton.Name = "navigateButton";
+            this.navigateButton.Size = new System.Drawing.Size(118, 44);
+            this.navigateButton.TabIndex = 2;
+            this.navigateButton.Text = "Go";
+            this.navigateButton.UseVisualStyleBackColor = true;
             // 
             // deleteHistoryItem
             // 
@@ -96,6 +96,15 @@
             this.deleteHistoryItem.Text = "Delete";
             this.deleteHistoryItem.UseVisualStyleBackColor = true;
             // 
+            // historyItem
+            // 
+            this.historyItem.AutoSize = true;
+            this.historyItem.Location = new System.Drawing.Point(83, 53);
+            this.historyItem.Name = "historyItem";
+            this.historyItem.Size = new System.Drawing.Size(87, 20);
+            this.historyItem.TabIndex = 0;
+            this.historyItem.Text = "histroyItem";
+            // 
             // clearHistoryButton
             // 
             this.clearHistoryButton.Location = new System.Drawing.Point(514, 431);
@@ -104,15 +113,7 @@
             this.clearHistoryButton.TabIndex = 4;
             this.clearHistoryButton.Text = "Clear History";
             this.clearHistoryButton.UseVisualStyleBackColor = true;
-            // 
-            // navigateButton
-            // 
-            this.navigateButton.Location = new System.Drawing.Point(6, 136);
-            this.navigateButton.Name = "navigateButton";
-            this.navigateButton.Size = new System.Drawing.Size(118, 44);
-            this.navigateButton.TabIndex = 2;
-            this.navigateButton.Text = "Go";
-            this.navigateButton.UseVisualStyleBackColor = true;
+            this.clearHistoryButton.Click += new System.EventHandler(this.clearHistoryButton_Click);
             // 
             // HistoryManagerUI
             // 

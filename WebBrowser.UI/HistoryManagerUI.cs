@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WebBrowser.Data.New;
+using WebBrowser.Data.New.HistoryDataSetTableAdapters;
 using WebBrowser.Logic.New;
 
 namespace WebBrowser.UI
@@ -23,7 +25,7 @@ namespace WebBrowser.UI
             var history = HistoryManager.GetHistory();
             foreach(var log in history)
             {
-                string logItem = String.Format("[{0}] {1} ({2}) ", log.Date, log.Name, log.URL);
+                string logItem = String.Format("[{0}] | {1} | ({2}) ", log.Date, log.Name, log.URL);
                 listBox1.Items.Add(logItem);
             }
          }
@@ -31,13 +33,31 @@ namespace WebBrowser.UI
         // Search Button
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (textBox1.Text.Length > 0)
+            {
+                var term = textBox1.Text;
+                var searchResult = new FilteredHistory();
+                searchResult.term = term;
+                searchResult.ShowDialog();
+            }
+            else { }
+            
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            HistoryItem selectedItem = (HistoryItem) listBox1.SelectedItem;
-            historyItem.Text = selectedItem.Name;
+            
+        }
+
+        private void clearHistoryButton_Click(object sender, EventArgs e)
+        {
+            var adapter = new HistoryTableAdapter();
+            var history = adapter.GetData();
+            foreach(var item in history)
+            {
+                HistoryManager.DeleteHistoryRow(item);
+                listBox1.Items.Clear();
+            }
         }
     }
 }

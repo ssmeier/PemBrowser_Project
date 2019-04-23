@@ -73,12 +73,12 @@ namespace WebBrowser.UI
             loadingBar.Value = 0;
             session.addBackStack(webBrowser1.Url);
 
-            /* var page = new HistoryItem();
+            var page = new HistoryItem();
             page.URL = webBrowser1.Url.ToString();
             page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
             page.Date = DateTime.Now;
             HistoryManager.AddHistory(page);
-            */
+            
         }
 
         private void addBookmark_Click(object sender, EventArgs e)

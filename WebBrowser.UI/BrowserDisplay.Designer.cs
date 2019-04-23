@@ -43,6 +43,7 @@
             this.tabField = new System.Windows.Forms.TabControl();
             this.tab1 = new System.Windows.Forms.TabPage();
             this.toolBrowserControl1 = new WebBrowser.UI.ToolBrowserControl();
+            this.clearHistoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tabField.SuspendLayout();
             this.tab1.SuspendLayout();
@@ -119,6 +120,8 @@
             // 
             // historyToolStripMenuItem
             // 
+            this.historyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearHistoryToolStripMenuItem});
             this.historyToolStripMenuItem.Name = "historyToolStripMenuItem";
             this.historyToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.historyToolStripMenuItem.Text = "History";
@@ -175,6 +178,13 @@
             this.toolBrowserControl1.Size = new System.Drawing.Size(1066, 569);
             this.toolBrowserControl1.TabIndex = 0;
             // 
+            // clearHistoryToolStripMenuItem
+            // 
+            this.clearHistoryToolStripMenuItem.Name = "clearHistoryToolStripMenuItem";
+            this.clearHistoryToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.clearHistoryToolStripMenuItem.Text = "Clear History";
+            this.clearHistoryToolStripMenuItem.Click += new System.EventHandler(this.clearHistoryToolStripMenuItem_Click);
+            // 
             // ViewWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -211,6 +221,7 @@
         private System.Windows.Forms.TabControl tabField;
         private System.Windows.Forms.TabPage tab1;
         private ToolBrowserControl toolBrowserControl1;
+        private System.Windows.Forms.ToolStripMenuItem clearHistoryToolStripMenuItem;
     }
 }
 

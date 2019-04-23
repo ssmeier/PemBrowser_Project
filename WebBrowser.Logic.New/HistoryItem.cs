@@ -8,6 +8,7 @@ namespace WebBrowser.Logic.New
 {
     public class HistoryItem
     {
+        public int ID { get; set; }
         public string URL { get; set; }
         public string Name { get; set; }
         public DateTime Date { get; set; }
