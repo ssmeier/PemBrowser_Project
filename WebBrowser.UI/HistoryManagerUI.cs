@@ -51,7 +51,7 @@ namespace WebBrowser.UI
             {
                 var item = listBox1.SelectedItem.ToString();
                 var newString = item.Split();
-                historyItem.Text = newString[1];
+                historyItem.Text = newString[4];
             }
             catch{ }
         }
