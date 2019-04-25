@@ -27,7 +27,7 @@ namespace WebBrowser.UI
                 try
                 {
                     Uri targetUrl = new Uri(urlBox.Text);
-                    webBrowser1.Url = targetUrl;
+                    webBrowser1.Navigate(targetUrl);
                     
                 }
                 catch { }
@@ -46,12 +46,12 @@ namespace WebBrowser.UI
 
         private void forwardButton_Click(object sender, EventArgs e)
         {
-            webBrowser1.Url = session.PageForward(webBrowser1.Url);
+            webBrowser1.Navigate(session.PageForward(webBrowser1.Url));
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            webBrowser1.Url = session.PageBackward(webBrowser1.Url);
+            webBrowser1.Navigate(session.PageBackward(webBrowser1.Url));
 
         }
 
@@ -66,15 +66,18 @@ namespace WebBrowser.UI
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            try
-            {
+            try { 
+                    
                     session.addBackStack(webBrowser1.Url);
-
+               
+                
                     var page = new HistoryItem();
                     page.URL = webBrowser1.Url.ToString();
                     page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
                     page.Date = DateTime.Now;
+
                     HistoryManager.AddHistory(page);
+                
                 
             }
             catch{ }
@@ -92,7 +95,6 @@ namespace WebBrowser.UI
         private void webBrowser1_ProgressChanged(object sender, WebBrowserProgressChangedEventArgs e)
         {
             
-            
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -103,6 +105,7 @@ namespace WebBrowser.UI
             progressLabel.Visible = false;
             loadingBar.Visible = false;
             loadingBar.Value = 0;
+
             
         }
 

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBrowserControl));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
@@ -41,9 +40,7 @@
             this.loadingBar = new System.Windows.Forms.ToolStripProgressBar();
             this.progressLabel = new System.Windows.Forms.ToolStripLabel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -112,7 +109,7 @@
             this.urlBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.urlBox.Name = "urlBox";
             this.urlBox.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.urlBox.Size = new System.Drawing.Size(490, 31);
+            this.urlBox.Size = new System.Drawing.Size(488, 31);
             this.urlBox.Text = "http://";
             this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
             // 
@@ -162,10 +159,6 @@
             this.webBrowser1.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.webBrowser1_Navigating);
             this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // ToolBrowserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -176,7 +169,6 @@
             this.Size = new System.Drawing.Size(794, 459);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,7 +185,6 @@
         private System.Windows.Forms.ToolStripButton goButton;
         private System.Windows.Forms.ToolStripButton addBookmark;
         private System.Windows.Forms.WebBrowser webBrowser1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ToolStripProgressBar loadingBar;
         private System.Windows.Forms.ToolStripLabel progressLabel;
     }

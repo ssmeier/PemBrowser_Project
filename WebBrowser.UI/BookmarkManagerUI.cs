@@ -39,10 +39,11 @@ namespace WebBrowser.UI
                     if (bookmarkItem.Contains(bookmark.Name))
                     {
                         BookmarkManager.DeleteBookmarkRow(bookmark);
-                        
                     }
                 }
-            listBox1.Refresh();
+            listBox1.Items.Remove(bookmarkItem);
+            
+            
 
         }
     }

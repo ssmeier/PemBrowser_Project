@@ -34,17 +34,22 @@ namespace WebBrowser.Logic.New
                 try
                 {
                     addForwardStack(currentUrl);
-                    currentUrl = backStack.Pop();
+                    backStack.Pop();
+                currentUrl = backStack.Pop();
                 }
                 catch { }
                 return currentUrl;
             }
 
-            public void addBackStack(Uri url)
+            public void addBackStack(Uri currentUrl)
             {
-            if (!(backStack.Contains(url)))
+            if (backStack.Count == 0)
             {
-                backStack.Push(url);
+                backStack.Push(currentUrl);
+            }
+            else if (!(currentUrl.AbsoluteUri.Equals(backStack.Peek().AbsoluteUri)))
+            {
+                backStack.Push(currentUrl);
             }
             }
 
@@ -84,6 +89,17 @@ namespace WebBrowser.Logic.New
             {
                 forwardStack = stack;
             }
+
+            public Boolean justVisited(Uri currentURl)
+        {
+            var prevUrl = peekBackStack();
+            if (prevUrl.AbsolutePath.Equals(prevUrl.AbsolutePath))
+            {
+                return true;
+            }
+            else return false;
+        }
+            
 
         }
 
