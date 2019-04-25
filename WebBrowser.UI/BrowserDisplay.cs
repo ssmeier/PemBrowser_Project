@@ -11,9 +11,9 @@ using WebBrowser.Logic.New;
 
 namespace WebBrowser.UI
 {
-    public partial class ViewWindow : Form
+    public partial class MiniBrower : Form
     {
-        public ViewWindow()
+        public MiniBrower()
         {
             InitializeComponent();
         }
@@ -35,11 +35,8 @@ namespace WebBrowser.UI
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-         
-            String about = "Minibrowser is a lightweight browser " +
-                "created as an exercise in the design and development of software." +
-                "\n\n" +"created by Sam Meier for Auburn University @sm0043";
-            MessageBox.Show(about);
+            var about = new Form1();
+            about.Show();
        
         }
     
@@ -96,6 +93,11 @@ namespace WebBrowser.UI
             {
                 HistoryManager.DeleteHistoryItem(item);
             }
+        }
+
+        private void MiniBrower_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -19,8 +19,12 @@ namespace WebBrowser.Logic.New
         }
         public static void AddHistory(HistoryItem item)
         {
-            var adapter = new HistoryTableAdapter();
-            adapter.Insert(item.URL, item.Name, item.Date);
+            try
+            {
+                var adapter = new HistoryTableAdapter();
+                adapter.Insert(item.URL, item.Name, item.Date);
+            }
+            catch { }
         }
 
         public static void DeleteHistoryItem(HistoryItem item)

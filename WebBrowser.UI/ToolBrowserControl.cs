@@ -13,12 +13,13 @@ namespace WebBrowser.UI
 {
     public partial class ToolBrowserControl : UserControl
     {
-        SessionHistory session = new SessionHistory();
+        
         public ToolBrowserControl()
         {
             InitializeComponent();
         }
 
+        SessionHistory session = new SessionHistory();
 
         private void goButton_Click(object sender, EventArgs e)
         {
@@ -65,21 +66,20 @@ namespace WebBrowser.UI
 
         private void webBrowser1_Navigated(object sender, WebBrowserNavigatedEventArgs e)
         {
-            loadingBar.Value = 100;
-            progressLabel.Text = "DONE!";
-            System.Threading.Thread.Sleep(1000);
-            progressLabel.Visible = false;
-            loadingBar.Visible = false;
-            loadingBar.Value = 0;
-            session.addBackStack(webBrowser1.Url);
+            try
+            {
+                    session.addBackStack(webBrowser1.Url);
 
-            var page = new HistoryItem();
-            page.URL = webBrowser1.Url.ToString();
-            page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
-            page.Date = DateTime.Now;
-            HistoryManager.AddHistory(page);
+                    var page = new HistoryItem();
+                    page.URL = webBrowser1.Url.ToString();
+                    page.Name = HistoryManager.UrlToName(webBrowser1.Url.ToString());
+                    page.Date = DateTime.Now;
+                    HistoryManager.AddHistory(page);
+                
+            }
+            catch{ }
             
-        }
+        } 
 
         private void addBookmark_Click(object sender, EventArgs e)
         {
@@ -97,11 +97,18 @@ namespace WebBrowser.UI
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            loadingBar.Value = 100;
+            progressLabel.Text = "DONE!";
+            System.Threading.Thread.Sleep(1000);
+            progressLabel.Visible = false;
+            loadingBar.Visible = false;
+            loadingBar.Value = 0;
             
         }
 
         private void webBrowser1_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {
+            progressLabel.Text = "Loading...";
             while (loadingBar.Value < 100)
             {
                 loadingBar.Visible = true; progressLabel.Visible = true;
