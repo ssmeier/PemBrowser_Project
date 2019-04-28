@@ -37,6 +37,8 @@
             this.urlBox = new System.Windows.Forms.ToolStripTextBox();
             this.goButton = new System.Windows.Forms.ToolStripButton();
             this.addBookmark = new System.Windows.Forms.ToolStripButton();
+            this.loadingBar = new System.Windows.Forms.ToolStripProgressBar();
+            this.progressLabel = new System.Windows.Forms.ToolStripLabel();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,11 +53,13 @@
             this.homeButton,
             this.urlBox,
             this.goButton,
-            this.addBookmark});
+            this.addBookmark,
+            this.loadingBar,
+            this.progressLabel});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(5);
-            this.toolStrip1.Size = new System.Drawing.Size(794, 41);
+            this.toolStrip1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 20);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 56);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -68,6 +72,7 @@
             this.backButton.Size = new System.Drawing.Size(28, 28);
             this.backButton.Text = "Back";
             this.backButton.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // forwardButton
             // 
@@ -77,6 +82,7 @@
             this.forwardButton.Name = "forwardButton";
             this.forwardButton.Size = new System.Drawing.Size(28, 28);
             this.forwardButton.Text = "Forward";
+            this.forwardButton.Click += new System.EventHandler(this.forwardButton_Click);
             // 
             // refreshButton
             // 
@@ -86,6 +92,7 @@
             this.refreshButton.Name = "refreshButton";
             this.refreshButton.Size = new System.Drawing.Size(28, 28);
             this.refreshButton.Text = "Refresh";
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // homeButton
             // 
@@ -102,7 +109,7 @@
             this.urlBox.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.urlBox.Name = "urlBox";
             this.urlBox.Padding = new System.Windows.Forms.Padding(1, 0, 1, 0);
-            this.urlBox.Size = new System.Drawing.Size(500, 31);
+            this.urlBox.Size = new System.Drawing.Size(488, 31);
             this.urlBox.Text = "http://";
             this.urlBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.urlBox_KeyDown);
             // 
@@ -124,15 +131,33 @@
             this.addBookmark.Name = "addBookmark";
             this.addBookmark.Size = new System.Drawing.Size(28, 28);
             this.addBookmark.Text = "toolStripButton6";
+            this.addBookmark.Click += new System.EventHandler(this.addBookmark_Click);
+            // 
+            // loadingBar
+            // 
+            this.loadingBar.Name = "loadingBar";
+            this.loadingBar.Size = new System.Drawing.Size(100, 15);
+            this.loadingBar.Visible = false;
+            // 
+            // progressLabel
+            // 
+            this.progressLabel.Name = "progressLabel";
+            this.progressLabel.Size = new System.Drawing.Size(100, 28);
+            this.progressLabel.Text = "LOADING...";
+            this.progressLabel.Visible = false;
             // 
             // webBrowser1
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser1.Location = new System.Drawing.Point(0, 41);
+            this.webBrowser1.Location = new System.Drawing.Point(0, 56);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(794, 418);
+            this.webBrowser1.Size = new System.Drawing.Size(794, 403);
             this.webBrowser1.TabIndex = 1;
+            this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
+            this.webBrowser1.Navigated += new System.Windows.Forms.WebBrowserNavigatedEventHandler(this.webBrowser1_Navigated);
+            this.webBrowser1.Navigating += new System.Windows.Forms.WebBrowserNavigatingEventHandler(this.webBrowser1_Navigating);
+            this.webBrowser1.ProgressChanged += new System.Windows.Forms.WebBrowserProgressChangedEventHandler(this.webBrowser1_ProgressChanged);
             // 
             // ToolBrowserControl
             // 
@@ -160,5 +185,7 @@
         private System.Windows.Forms.ToolStripButton goButton;
         private System.Windows.Forms.ToolStripButton addBookmark;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ToolStripProgressBar loadingBar;
+        private System.Windows.Forms.ToolStripLabel progressLabel;
     }
 }
